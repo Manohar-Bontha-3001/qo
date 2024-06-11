@@ -1,21 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>Cloud App</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Index</title>
 </head>
 <body>
-    <h1>Welcome to the Cloud App</h1>
-    <h2>Your Name</h2>
-    <h2>123456</h2>
-    <img src="{{ url_for('static', filename='uploads/sinong.jpg') }}" alt="Profile Picture">
-    <br><br>
-    <a href="{{ url_for('upload') }}">Upload Files</a>
-    <a href="{{ url_for('search') }}">Search</a>
-    <a href="{{ url_for('name_search') }}">Search by Name</a>
-    <a href="{{ url_for('cost_search') }}">Search by Cost Range</a>
-    <a href="{{ url_for('update_description') }}">Update Description</a>
-    <a href="{{ url_for('delete') }}">Delete User</a>
-    <a href="{{ url_for('add_user') }}">Add User</a>
+    <h1>{{ name }}</h1>
+    <h2>ID: {{ id }}</h2>
+    <img src="{{ url_for('static', filename='sinong.jpg') }}" alt="Picture">
+    <br>
+    <a href="/upload">Upload</a> | 
+    <a href="/search">Search</a> | 
+    <a href="/name_search">Name Search</a> | 
+    <a href="/cost_search">Cost Search</a> | 
+    <a href="/update_description">Update Description</a> | 
+    <a href="/delete">Delete</a> | 
+    <a href="/add_user">Add User</a>
 </body>
 </html>
