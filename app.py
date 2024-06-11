@@ -2,7 +2,8 @@ from flask import Flask, request, render_template, redirect, url_for
 from azure.storage.blob import BlobServiceClient
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
+
 
 # Azure Blob Storage connection string and container name
 AZURE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=manoharb1;AccountKey=LaHIGY//k5jTwvopx10ng/LH1T5hDXE5mV46AgSO7GvQ9HQ/K7RAZjucAJvkgIGETfzC6IuTN5G1+AStqABahg==;EndpointSuffix=core.windows.net'
@@ -113,6 +114,13 @@ def add_user():
 
         return redirect(url_for('index'))
     return render_template('add_user.html')
+
+def download_csv():
+    global people_df
+    csv_filename = 'people.csv'
+    people_df.to_csv(csv_filename, index=False)
+    return send_file(csv_filename, as_attachment=True)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
