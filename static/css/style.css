@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Light gray background */
 }
 
 h1 {
-    color: #343a40;
+    color: #343a40; /* Dark gray heading */
 }
 
 form {
@@ -19,22 +19,29 @@ label {
     font-weight: bold;
 }
 
-input[type="text"], input[type="number"], input[type="file"] {
+input[type="text"],
+input[type="number"],
+input[type="file"] {
     margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 input[type="submit"] {
     display: block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #007bff; /* Blue submit button */
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 ul {
