@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search by Cost Range</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Search by Cost Range</h1>
+    <form method="post">
+        <label>Min Cost:</label>
+        <input type="number" name="min_cost" required>
+        <label>Max Cost:</label>
+        <input type="number" name="max_cost" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if result %}
+    <h2>Search Results</h2>
+    <ul>
+        {% for person in result %}
+        <li>{{ person['Name'] }} - {{ person['Salary'] }} - {{ person['Room'] }} - {{ person['Telnum'] }} - {{ person['Keywords'] }}
+            <img src="{{ url_for('static', filename='uploads/' + person['Picture']) }}" width="100">
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
